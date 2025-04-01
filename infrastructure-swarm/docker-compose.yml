@@ -1,0 +1,29 @@
+version: "3.8"
+
+services:
+  frontend:
+    image: infnet-guide
+    build: ../frontend
+    deploy:
+      replicas: 4
+      placement:
+        constraints:
+          - node.labels.role == frontend
+      update_config:
+        parallelism: 1
+        delay: 2s
+      restart_policy:
+        condition: on-failure
+    ports:
+      - "3000:3000"
+    networks:
+      - arq_app_net
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:3000/api/health"]
+      interval: 30s
+      timeout: 3s
+      retries: 3
+
+networks:
+  arq_app_net:
+    driver: overlay
