@@ -2,6 +2,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: redis
+  namespace: infnet-system
   labels:
     app: redis
 spec:
@@ -39,9 +40,9 @@ apiVersion: v1
 kind: Service
 metadata:
   name: redis-service
+  namespace: infnet-system
 spec:
   type: ClusterIP
-  clusterIP: 10.96.100.100
   selector:
     app: redis
   ports:
