@@ -22,7 +22,7 @@ The system is divided in 3 different parts:
 
    `./deployment.sh`
 
-4. Run the following process to access the cluster service on your browser:
+4. Run the following processes to access the cluster service on your browser:
 
    a) _To access the frondend app:_ minikube service infnet-frontend-service -n infnet-system --url (click the url while the process is running)
 
