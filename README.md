@@ -22,7 +22,13 @@ The system is divided in 3 different parts:
 
    `./deployment.sh`
 
-4. Run the following processes to access the cluster service on your browser:
+   A successfull deployment would display the following prompt:
+
+   
+   <img width="694" alt="Screenshot 2025-04-13 at 13 44 21" src="https://github.com/user-attachments/assets/a4d84968-9d70-434d-b6b5-0b6794cc4ebf" />
+
+
+5. Run the following processes to access the cluster service on your browser:
 
    a) _To access the frondend app:_ minikube service infnet-frontend-service -n infnet-system --url (click the url while the process is running)
 
